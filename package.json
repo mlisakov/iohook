@@ -44,13 +44,13 @@
   },
   "devDependencies": {
     "archiver": "^2.1.1",
-    "cmake-js": "^3.6.2",
+    "cmake-js": "^5.0.1",
     "jest": "^22.4.3",
     "mkdirp": "^0.5.1",
     "nan": "^2.10.0",
     "prebuild": "^6.2.2",
     "robotjs": "^0.5.1",
-    "vuepress": "^0.14.4"
+    "vuepress": "^0.14.8"
   },
   "supportedTargets": [
     [
