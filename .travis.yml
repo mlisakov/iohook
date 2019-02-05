@@ -6,24 +6,24 @@ matrix:
   include:
     - os: linux
       env:
-      - ARCH=ia32
-      - CXX=g++-4.8
-    addons:
-      apt:
-        sources:
-          - ubuntu-toolchain-r-test
-        packages:
-          - g++-4.8
+        - ARCH=ia32
+        - CXX=g++-4.8
+      addons:
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
+          packages:
+            - g++-4.8
     - os: linux
       env:
-      - ARCH=x64
-      - CXX=g++-4.8
-    addons:
-      apt:
-        sources:
-          - ubuntu-toolchain-r-test
-        packages:
-          - g++-4.8
+        - ARCH=x64
+        - CXX=g++-4.8
+      addons:
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
+          packages:
+            - g++-4.8
     - os: osx
       env: CXX=gcc-8
       addons:
