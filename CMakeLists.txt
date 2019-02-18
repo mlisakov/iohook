@@ -1,6 +1,12 @@
 cmake_minimum_required(VERSION 2.8)
 set(CMAKE_CXX_STANDARD 11)
 
+if (CMAKE_C_COMPILER_ID STREQUAL "GNU")
+  set (CMAKE_C_FLAGS "--std=gnu99 ${CMAKE_C_FLAGS}")
+else ()
+  set (CMAKE_C_FLAGS "--std=99 ${CMAKE_C_FLAGS}")
+endif ()
+
 project(iohook)
 
 if(WIN32 OR WIN64)
