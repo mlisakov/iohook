@@ -238,7 +238,8 @@ static void process_key_pressed(KBDLLHOOKSTRUCT *kbhook) {
 
 		// If the pressed event was not consumed and a unicode char exists...
 		SIZE_T count = keycode_to_unicode(kbhook->vkCode, buffer, sizeof(buffer));
-		for (unsigned int i = 0; i < count; i++) {
+		unsigned int i;
+		for (i = 0; i < count; i++) {
 			// Populate key typed event.
 			event.time = kbhook->time;
 			event.reserved = 0x00;

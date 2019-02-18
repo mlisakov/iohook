@@ -74,7 +74,8 @@ UIOHOOK_API void hook_post_event(uiohook_event * const event) {
 	INPUT *events = malloc(sizeof(INPUT) * events_max);
 
 	if (event->mask & (MASK_SHIFT | MASK_CTRL | MASK_META | MASK_ALT)) {
-		for (unsigned int i = 0; i < sizeof(keymask_lookup) / sizeof(UINT); i++) {
+		unsigned int i;
+		for (i = 0; i < sizeof(keymask_lookup) / sizeof(UINT); i++) {
 			if (event->mask & 1 << i) {
 				events[events_size].type = INPUT_KEYBOARD;
 				events[events_size].ki.wVk = keymask_lookup[i];
@@ -284,7 +285,8 @@ UIOHOOK_API void hook_post_event(uiohook_event * const event) {
 
 	// Release the previously held modifier keys used to fake the event mask.
 	if (event->mask & (MASK_SHIFT | MASK_CTRL | MASK_META | MASK_ALT)) {
-		for (unsigned int i = 0; i < sizeof(keymask_lookup) / sizeof(UINT); i++) {
+		unsigned int i;
+		for (i = 0; i < sizeof(keymask_lookup) / sizeof(UINT); i++) {
 			if (event->mask & 1 << i) {
 				events[events_size].type = INPUT_KEYBOARD;
 				events[events_size].ki.wVk = keymask_lookup[i];

@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.8)
 
-set (CMAKE_C_STANDARD 99)
+set (CMAKE_C_STANDARD 11)
 project(iohook)
 
 if(WIN32 OR WIN64)

@@ -25,7 +25,8 @@
 
 /* Make sure all native keycodes map to virtual scancodes */
 static char * test_bidirectional_keycode() {
-	for (unsigned short i = 0; i < 256; i++) {
+	unsigned short i;
+	for (i = 0; i < 256; i++) {
 		printf("Testing keycode\t\t\t%3u\t[0x%04X]\n", i, i);
 
 		#ifdef _WIN32
@@ -60,7 +61,8 @@ static char * test_bidirectional_keycode() {
 
 /* Make sure all virtual scancodes map to native keycodes */
 static char * test_bidirectional_scancode() {
-	for (unsigned short i = 0; i < 256; i++) {
+	unsigned short i;
+	for (i = 0; i < 256; i++) {
 		printf("Testing scancode\t\t%3u\t[0x%04X]\n", i, i);
 
 		// Lookup the native keycode...

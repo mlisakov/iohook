@@ -501,7 +501,8 @@ static int refresh_locale_list() {
 			while (locale_item != NULL) {
 				// Check to see if the old HKL is in the new list.
 				bool is_loaded = false;
-				for (int i = 0; i < new_size && !is_loaded; i++) {
+				int i;
+				for (i = 0; i < new_size && !is_loaded; i++) {
 					if (locale_item->id == hkl_list[i]) {
 						// Flag and jump out of the loop.
 						hkl_list[i] = NULL;
@@ -549,7 +550,8 @@ static int refresh_locale_list() {
 
 
 			// Insert anything new into the linked list.
-			for (int i = 0; i < new_size; i++) {
+			int i;
+			for (i =0; i < new_size; i++) {
 				// Check to see if the item was already in the list.
 				if (hkl_list[i] != NULL) {
 					// Set the active keyboard layout for this thread to the HKL.
@@ -715,7 +717,8 @@ SIZE_T keycode_to_unicode(DWORD keycode, PWCHAR buffer, SIZE_T size) {
 		 * offsets on Wow64.
 		 */
 		bool is_shift = false, is_ctrl = false, is_alt = false;
-		for (int i = 0; pVkToBit[i].Vk != 0; i++) {
+		int i;
+		for (i =0; pVkToBit[i].Vk != 0; i++) {
 			short state = GetAsyncKeyState(pVkToBit[i].Vk);
 
 			// Check to see if the most significant bit is active.
@@ -830,7 +833,8 @@ SIZE_T keycode_to_unicode(DWORD keycode, PWCHAR buffer, SIZE_T size) {
 		// If the current local has a dead key set.
 		if (deadChar != WCH_NONE) {
 			// Loop over the pDeadKey lookup table for the locale.
-			for (int i = 0; pDeadKey[i].dwBoth != 0; i++) {
+			int i;
+			for (i = 0; pDeadKey[i].dwBoth != 0; i++) {
 				WCHAR baseChar = (WCHAR) pDeadKey[i].dwBoth;
 				WCHAR diacritic = (WCHAR) (pDeadKey[i].dwBoth >> 16);
 
