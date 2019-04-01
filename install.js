@@ -29,7 +29,7 @@ function install(runtime, abi, platform, arch, cb) {
 
   console.log('Downloading prebuild for platform:', currentPlatform);
  
-  let downloadUrl = 'https://github.com/mlisakov/iohook/releases/download/v' + pkgVersion + '/' + currentPlatform + '.tar.gz';
+  let downloadUrl = 'https://github.com/mlisakov/iohook/releases/download/' + pkgVersion + '/' + currentPlatform + '.tar.gz';
   console.log('Downloading prebuild for platform from:', downloadUrl);
   
   let reqOpts = {url: downloadUrl};
